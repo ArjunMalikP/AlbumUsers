@@ -1,0 +1,35 @@
+POSTMAN:
+1. Use Post request on localhost:8081/users
+   JSON Body
+	{
+	    "firstName": "Kiran",
+	    "lastName": "Kumar",
+	    "email": "test@test.com",
+    	    "password": "12345678"
+	}
+2. Make a post request on http://localhost:8081/users/login
+   JSON Body 
+	{
+	    "email": "test@test.com",
+    	    "password": "12345678"
+	}
+
+In the success response, in Headers we get Token and Userid
+
+3. Make Get request on
+http://localhost:8081/users/cbe00092-54de-49e6-939c-a030623f4120
+NOTE: the above userid will change
+Also in headers the token needs to be placed as
+Bearer <token>
+
+4. Make Post request on
+http://localhost:8080/albums
+JSON Body
+{
+	"title":"PhotoAlbum1"
+}
+NOTE: We need the token to create a new album
+
+5. Make a get request
+http://localhost:8081/users/cbe00092-54de-49e6-939c-a030623f4120?fields=albums
+to get all the albums of a user
